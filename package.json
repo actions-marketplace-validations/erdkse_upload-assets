@@ -1,6 +1,6 @@
 {
   "name": "@erdkse/upload-assets-with-folder",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "GitHub Action to upload multiple assets to a release",
   "main": "index.js",
   "scripts": {
