@@ -1,8 +1,8 @@
 curators:
- - alexellis
+  - erdkse
 
 features:
- - dco_check
- - comments
- - pr_description_required
- - release_notes
+  - dco_check
+  - comments
+  - pr_description_required
+  - release_notes
