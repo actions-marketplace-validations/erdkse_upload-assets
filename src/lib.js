@@ -17,9 +17,7 @@ async function run() {
 
     // Get the inputs from the workflow file: https://github.com/actions/toolkit/tree/master/packages/core#inputsoutputs
     const assetPathsSt = core.getInput('asset_paths', { required: true });
-    const folderSt = core.getInput('folder');
-
-    uploadUrl = folderSt ? `${uploadUrl}/${folderSt}` : uploadUrl;
+    const filePrefix = core.getInput('file_prefix');
 
     const assetPaths = JSON.parse(assetPathsSt);
     if (!assetPaths || assetPaths.length == 0) {
@@ -64,7 +62,7 @@ async function run() {
       const uploadAssetResponse = await octokit.repos.uploadReleaseAsset({
         url: uploadUrl,
         headers,
-        name: assetName,
+        name: `${filePrefix}-${assetName}`,
         data: fs.readFileSync(asset),
       });
 
