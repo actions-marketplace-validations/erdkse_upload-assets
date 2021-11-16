@@ -1,11 +1,14 @@
 {
   "name": "@erdkse/upload-assets",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "GitHub Action to upload multiple assets to a release",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "ncc build src"
+    "build": "ncc build src",
+    "release:patch": "standard-version --release-as patch",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major"
   },
   "repository": {
     "type": "git",
@@ -22,5 +25,8 @@
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
     "glob": "^7.1.6"
+  },
+  "devDependencies": {
+    "standard-version": "^9.3.2"
   }
 }
